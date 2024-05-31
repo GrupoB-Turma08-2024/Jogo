@@ -112,6 +112,7 @@ public class TelaInicialAdm extends javax.swing.JFrame {
         EfeitoSonoro.Play("click.wav");
         TelaPrincipal inserir = new TelaPrincipal();
         inserir.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_BotaoJogarActionPerformed
 

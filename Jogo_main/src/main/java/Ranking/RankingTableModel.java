@@ -14,7 +14,7 @@ import javax.swing.table.AbstractTableModel;
 public class RankingTableModel extends AbstractTableModel {
     
     private List<Ranking> dados = new ArrayList<>();
-    private String[]colunas = {"Nome","Tempo","Quantidade de pontos"};
+    private String[]colunas = {"Nome","Tempo em segundos","Quantidade de pontos"};
     
     @Override
     public String getColumnName(int column){

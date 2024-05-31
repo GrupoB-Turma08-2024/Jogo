@@ -30,9 +30,7 @@ public class TelaHistorinha extends javax.swing.JFrame {
         labelImagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 597));
         setMinimumSize(new java.awt.Dimension(1000, 597));
-        setPreferredSize(new java.awt.Dimension(1000, 597));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -46,7 +44,7 @@ public class TelaHistorinha extends javax.swing.JFrame {
         getContentPane().add(botaoProxima);
         botaoProxima.setBounds(20, 500, 370, 40);
 
-        labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/outros_fundos/final_0.jpg"))); // NOI18N
+        labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/inicial_0.jpg"))); // NOI18N
         labelImagem.setText("imagem");
         getContentPane().add(labelImagem);
         labelImagem.setBounds(0, 10, 1000, 563);

@@ -59,7 +59,7 @@
           <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens_ui/retangulo.png"/>
+          <Image iconType="3" name="/imagens_botoes/retangulo.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="PR&#xd3;XIMA PERGUNTA"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -85,7 +85,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/outros_fundos/imagem_explicacao.jpg"/>
+          <Image iconType="3" name="/imagens_telas/imagem_explicacao.jpg"/>
         </Property>
         <Property name="verticalAlignment" type="int" value="1"/>
         <Property name="alignmentY" type="float" value="0.0"/>
@@ -93,7 +93,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+          <AbsoluteConstraints x="0" y="0" width="1000" height="560"/>
         </Constraint>
       </Constraints>
     </Component>

@@ -30,9 +30,7 @@ public class TelaLousa extends javax.swing.JFrame {
         backgroundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 597));
         setMinimumSize(new java.awt.Dimension(1000, 597));
-        setPreferredSize(new java.awt.Dimension(1000, 597));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -47,7 +45,7 @@ public class TelaLousa extends javax.swing.JFrame {
         botaoProximaPergunta.setBackground(new java.awt.Color(0, 0, 0));
         botaoProximaPergunta.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         botaoProximaPergunta.setForeground(new java.awt.Color(255, 255, 255));
-        botaoProximaPergunta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/retangulo.png"))); // NOI18N
+        botaoProximaPergunta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/retangulo.png"))); // NOI18N
         botaoProximaPergunta.setText("PRÓXIMA PERGUNTA");
         botaoProximaPergunta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         botaoProximaPergunta.setContentAreaFilled(false);
@@ -63,12 +61,12 @@ public class TelaLousa extends javax.swing.JFrame {
         botaoProximaPergunta.setBounds(20, 500, 190, 40);
 
         backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/outros_fundos/imagem_explicacao.jpg"))); // NOI18N
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/imagem_explicacao.jpg"))); // NOI18N
         backgroundLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         backgroundLabel.setAlignmentY(0.0F);
         backgroundLabel.setName(""); // NOI18N
         getContentPane().add(backgroundLabel);
-        backgroundLabel.setBounds(0, 0, 1000, 562);
+        backgroundLabel.setBounds(0, 0, 1000, 560);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

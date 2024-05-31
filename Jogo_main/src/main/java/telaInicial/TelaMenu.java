@@ -83,7 +83,7 @@ public class TelaMenu extends javax.swing.JFrame {
 
         creditoBotao.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         creditoBotao.setForeground(new java.awt.Color(255, 255, 255));
-        creditoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/botao1.png"))); // NOI18N
+        creditoBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/botao1.png"))); // NOI18N
         creditoBotao.setText("Créditos");
         creditoBotao.setBorder(null);
         creditoBotao.setContentAreaFilled(false);
@@ -93,7 +93,7 @@ public class TelaMenu extends javax.swing.JFrame {
 
         sobreNosBotao.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         sobreNosBotao.setForeground(new java.awt.Color(255, 255, 255));
-        sobreNosBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/botao1.png"))); // NOI18N
+        sobreNosBotao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/botao1.png"))); // NOI18N
         sobreNosBotao.setText("Sobre Nós");
         sobreNosBotao.setBorder(null);
         sobreNosBotao.setContentAreaFilled(false);

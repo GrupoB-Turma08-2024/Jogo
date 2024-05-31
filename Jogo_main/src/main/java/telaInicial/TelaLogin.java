@@ -4,7 +4,10 @@ package telaInicial;
 import Connection.DAO;
 import Usuario.Usuario;
 import CrudQuestoes.TelaInicialAdm;
+import SistemaPontos.Pontuacao;
 import java.awt.Cursor;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
@@ -220,16 +223,22 @@ public class TelaLogin extends javax.swing.JFrame {
                 if (dao.existeAdm(u)) {
                     JOptionPane.showMessageDialog(null,"O jogador é um administrador.");
                     TelaInicialAdm inserir = new TelaInicialAdm();
+                    u.setIdUsuario(dao.pegarIdJogador(u.getNome()));
+                    Pontuacao.setarJogador(u.getIdUsuario(), u.getNome());
                     inserir.setVisible(true);
             // Ação para administrador
                 } else {
                     JOptionPane.showMessageDialog(null,"O jogador é um aluno.");
                 // Ação para jogador
                     TelaPrincipal inserir = new TelaPrincipal();
+                    u.setIdUsuario(dao.pegarIdJogador(u.getNome()));
+                    Pontuacao.setarJogador(u.getIdUsuario(), u.getNome());
                     inserir.setVisible(true);
                 }
             } else {
                 JOptionPane.showMessageDialog(null,"Usuário não encontrado.");
+                TelaLogin tp = new TelaLogin ();
+                tp.setVisible(true);
             }
 
         }

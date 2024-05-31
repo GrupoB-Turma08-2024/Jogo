@@ -63,6 +63,7 @@ public class Usuario {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+        System.out.println(idUsuario);
     }
 
     public String getNome() {

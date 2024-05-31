@@ -44,7 +44,7 @@ public class TelaQuiz extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Goudy Stout", 3, 10)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 51, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem_ilegal_em_17_paises.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/TelaLogin1.jpg"))); // NOI18N
         jButton1.setText("BOTÃO SUPER SECRETO DO PORTO");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 15, true));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -67,7 +67,7 @@ public class TelaQuiz extends javax.swing.JFrame {
 
         botaoAlternativaA.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         botaoAlternativaA.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAlternativaA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/retangulo.png"))); // NOI18N
+        botaoAlternativaA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/retangulo.png"))); // NOI18N
         botaoAlternativaA.setText("teste");
         botaoAlternativaA.setBorder(null);
         botaoAlternativaA.setBorderPainted(false);
@@ -87,7 +87,7 @@ public class TelaQuiz extends javax.swing.JFrame {
 
         botaoAlternativaB.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         botaoAlternativaB.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAlternativaB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/retangulo.png"))); // NOI18N
+        botaoAlternativaB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/retangulo.png"))); // NOI18N
         botaoAlternativaB.setText("teste");
         botaoAlternativaB.setBorder(null);
         botaoAlternativaB.setBorderPainted(false);
@@ -107,7 +107,7 @@ public class TelaQuiz extends javax.swing.JFrame {
 
         botaoAlternativaC.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         botaoAlternativaC.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAlternativaC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/retangulo.png"))); // NOI18N
+        botaoAlternativaC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/retangulo.png"))); // NOI18N
         botaoAlternativaC.setText("teste");
         botaoAlternativaC.setBorder(null);
         botaoAlternativaC.setBorderPainted(false);
@@ -127,7 +127,7 @@ public class TelaQuiz extends javax.swing.JFrame {
 
         botaoAlternativaD.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         botaoAlternativaD.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAlternativaD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/retangulo.png"))); // NOI18N
+        botaoAlternativaD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/retangulo.png"))); // NOI18N
         botaoAlternativaD.setText("teste");
         botaoAlternativaD.setBorder(null);
         botaoAlternativaD.setBorderPainted(false);
@@ -147,7 +147,7 @@ public class TelaQuiz extends javax.swing.JFrame {
 
         botaoAlternativaE.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         botaoAlternativaE.setForeground(new java.awt.Color(255, 255, 255));
-        botaoAlternativaE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/retangulo.png"))); // NOI18N
+        botaoAlternativaE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/retangulo.png"))); // NOI18N
         botaoAlternativaE.setText("teste");
         botaoAlternativaE.setBorder(null);
         botaoAlternativaE.setBorderPainted(false);

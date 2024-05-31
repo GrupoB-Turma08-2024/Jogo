@@ -124,4 +124,31 @@ public class DAO {
         return " ";
     }
 
+    public int pegarIdJogador(String nome) throws Exception {
+        //jdbc: Java Database Connectivity
+
+        //1-Especificar o comando SQL
+        String sql = "SELECT idJogador FROM Jogador WHERE nomeJogador = ?";
+        //2-Estabelecer uma conexao com o banco de dados
+        con = ConnectionFactory.obterConexao();
+        //3-Preparar o comando
+        PreparedStatement ps = con.prepareStatement(sql);
+        //4-Substituir os eventuais placeholders
+        ps.setString(1, nome);
+        //5-Executar o comando
+        ResultSet rs = ps.executeQuery();
+        //6-Lidar com o resultado
+        int id = -1;
+        while(rs.next()){
+            id = rs.getInt("idJogador");
+        }
+        System.out.println(id + ": " + nome);
+        //7-Fechar conexao
+        rs.close();
+        ps.close();
+        con.close();
+        //8-Responder se o usuario existe ou nao
+        return id;
+    }
+    
 }

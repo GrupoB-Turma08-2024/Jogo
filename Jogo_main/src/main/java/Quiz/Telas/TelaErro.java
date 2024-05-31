@@ -34,9 +34,7 @@ public class TelaErro extends javax.swing.JFrame {
         backgroundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 597));
         setMinimumSize(new java.awt.Dimension(1000, 597));
-        setPreferredSize(new java.awt.Dimension(1000, 597));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -51,7 +49,7 @@ public class TelaErro extends javax.swing.JFrame {
         botaoTentarNovamente.setBackground(new java.awt.Color(128, 0, 0));
         botaoTentarNovamente.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         botaoTentarNovamente.setForeground(new java.awt.Color(255, 255, 255));
-        botaoTentarNovamente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_ui/retangulo.png"))); // NOI18N
+        botaoTentarNovamente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/retangulo.png"))); // NOI18N
         botaoTentarNovamente.setText("TENTAR NOVAMENTE");
         botaoTentarNovamente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         botaoTentarNovamente.setContentAreaFilled(false);
