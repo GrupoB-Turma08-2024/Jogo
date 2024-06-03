@@ -7,6 +7,8 @@ import java.awt.Font;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import telaInicial.EfeitoSonoro;
+import telaInicial.Musica;
 
 public class TelaQuiz extends javax.swing.JFrame {
 

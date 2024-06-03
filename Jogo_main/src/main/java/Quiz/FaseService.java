@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class FaseService {
     private Fase[] fases = new Fase[10];
-    private final String[] nomesFases = {"Boca","Faringe","Esofago","Estomago","Figado","Vesicula biliar","Pancreas","Intestino delgado","Intestino grosso","Reto"};
+    private final String[] nomesFases = {"Boca","Faringe","Figado","Esofago","Estomago","Vesicula biliar","Intestino delgado","Intestino grosso","Pancreas","Reto"};
     
     public FaseService() throws Exception{ // METODO CONSTRUTOR, QUANDO EU CHAMAR FASESERVICE, É PRA ELE JÁ CONFIGURAR TODAS AS FASES PRA MIM
        

@@ -3,11 +3,13 @@ package Quiz;
 import Quiz.Telas.TelaLousa;
 import Quiz.Telas.TelaErro;
 import Quiz.Telas.TelaHistorinha;
+import Quiz.Telas.TelaBonus;
 import Quiz.Telas.TelaQuiz;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 import telaInicial.TelaPrincipal;
 import SistemaPontos.Pontuacao;
+import java.util.HashSet;
 import java.util.Set;
 
 public class QuizManager {
@@ -22,9 +24,15 @@ public class QuizManager {
         if (faseAtual.getIdFase() < 9){
             numeroPergunta = 0;
             faseAtual = fs.getFase(faseAtual.getIdFase() + 1);
-            if(faseAtual.isBonus()){ JOptionPane.showMessageDialog(null, "temporario: a proxima fase é bonus, vale o dobro de pontos");}
+            
+            if(faseAtual.isBonus()){ 
+                TelaBonus tb = new TelaBonus(this);
+                telaQuiz.setVisible(false);
+            }
+            else{
+                telaQuiz.setVisible(true);
+            }
             telaQuiz.atualizarTela(faseAtual, numeroPergunta);
-            telaQuiz.setVisible(true);
         }
         else{
             Pontuacao.setTempoFim(System.currentTimeMillis());
