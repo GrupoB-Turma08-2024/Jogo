@@ -49,7 +49,7 @@ public class TelaConsultar extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        procurarBotao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,17 +99,17 @@ public class TelaConsultar extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boca", "Faringe", "Esofago", "Estomago","Figado","Vesicula biliar","Pancreas","Intestino delgado","Intestino grosso","Reto" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 110, 30));
 
-        jButton2.setBackground(new java.awt.Color(6, 16, 6));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Procurar");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        procurarBotao.setBackground(new java.awt.Color(6, 16, 6));
+        procurarBotao.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        procurarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        procurarBotao.setText("Procurar");
+        procurarBotao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        procurarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                procurarBotaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 90, 30));
+        getContentPane().add(procurarBotao, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 90, 30));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/adm2.jpg"))); // NOI18N
@@ -118,12 +118,12 @@ public class TelaConsultar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void procurarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarBotaoActionPerformed
         EfeitoSonoro.Play("click.wav");
         var fase1 = jComboBox1.getSelectedItem();
         String fase2 = ((String )fase1);
         getQuestoes(fase2);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_procurarBotaoActionPerformed
 
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
         EfeitoSonoro.Play("back.wav");
@@ -169,12 +169,12 @@ public class TelaConsultar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
+    private javax.swing.JButton procurarBotao;
     private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 }

@@ -138,7 +138,7 @@ public class TelaSenha extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(TelaSenha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        RedefinirSenha tp = new RedefinirSenha();
+        TelaCodigo tp = new TelaCodigo();
         tp.setVisible(true);
     }//GEN-LAST:event_entrarBotaoActionPerformed
 

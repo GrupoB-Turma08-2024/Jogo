@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 import telaInicial.Musica;
@@ -13,6 +14,7 @@ import telaInicial.Musica;
 public class TelaQuiz extends javax.swing.JFrame {
 
     private QuizManager quizManager;
+    private final static int[] botSize = {230,120};
     
     public TelaQuiz(QuizManager quizManager){
         this.quizManager = quizManager;
@@ -79,6 +81,14 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaA.setMaximumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaA.setMinimumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaA.setPreferredSize(new java.awt.Dimension(230, 120));
+        botaoAlternativaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoAlternativaAMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoAlternativaAMouseExited(evt);
+            }
+        });
         botaoAlternativaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAlternativaAActionPerformed(evt);
@@ -99,6 +109,17 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaB.setMaximumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaB.setMinimumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaB.setPreferredSize(new java.awt.Dimension(230, 120));
+        botaoAlternativaB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botaoAlternativaBMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoAlternativaBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoAlternativaBMouseExited(evt);
+            }
+        });
         botaoAlternativaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAlternativaBActionPerformed(evt);
@@ -119,6 +140,14 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaC.setMaximumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaC.setMinimumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaC.setPreferredSize(new java.awt.Dimension(230, 120));
+        botaoAlternativaC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoAlternativaCMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoAlternativaCMouseExited(evt);
+            }
+        });
         botaoAlternativaC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAlternativaCActionPerformed(evt);
@@ -139,6 +168,14 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaD.setMaximumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaD.setMinimumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaD.setPreferredSize(new java.awt.Dimension(230, 120));
+        botaoAlternativaD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoAlternativaDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoAlternativaDMouseExited(evt);
+            }
+        });
         botaoAlternativaD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAlternativaDActionPerformed(evt);
@@ -159,6 +196,14 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaE.setMaximumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaE.setMinimumSize(new java.awt.Dimension(230, 120));
         botaoAlternativaE.setPreferredSize(new java.awt.Dimension(230, 120));
+        botaoAlternativaE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoAlternativaEMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoAlternativaEMouseExited(evt);
+            }
+        });
         botaoAlternativaE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAlternativaEActionPerformed(evt);
@@ -202,6 +247,54 @@ public class TelaQuiz extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         quizManager.proximaPergunta();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botaoAlternativaAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaAMouseEntered
+        ajustarBot(botaoAlternativaA, 5);
+    }//GEN-LAST:event_botaoAlternativaAMouseEntered
+
+    private void botaoAlternativaAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaAMouseExited
+        ajustarBot(botaoAlternativaA, 0);
+    }//GEN-LAST:event_botaoAlternativaAMouseExited
+
+    private void botaoAlternativaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaBMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoAlternativaBMouseClicked
+
+    private void botaoAlternativaBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaBMouseEntered
+        ajustarBot(botaoAlternativaB, 5);
+    }//GEN-LAST:event_botaoAlternativaBMouseEntered
+
+    private void botaoAlternativaBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaBMouseExited
+        ajustarBot(botaoAlternativaB, 0);
+    }//GEN-LAST:event_botaoAlternativaBMouseExited
+
+    private void botaoAlternativaCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaCMouseEntered
+        ajustarBot(botaoAlternativaC, 5);
+    }//GEN-LAST:event_botaoAlternativaCMouseEntered
+
+    private void botaoAlternativaCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaCMouseExited
+        ajustarBot(botaoAlternativaC, 0);
+    }//GEN-LAST:event_botaoAlternativaCMouseExited
+
+    private void botaoAlternativaDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaDMouseEntered
+        ajustarBot(botaoAlternativaD, 5);
+    }//GEN-LAST:event_botaoAlternativaDMouseEntered
+
+    private void botaoAlternativaDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaDMouseExited
+        ajustarBot(botaoAlternativaD, 0);
+    }//GEN-LAST:event_botaoAlternativaDMouseExited
+
+    private void botaoAlternativaEMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaEMouseEntered
+        ajustarBot(botaoAlternativaE, 5);
+    }//GEN-LAST:event_botaoAlternativaEMouseEntered
+
+    private void botaoAlternativaEMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaEMouseExited
+        ajustarBot(botaoAlternativaE, 0);
+    }//GEN-LAST:event_botaoAlternativaEMouseExited
+    
+    private void ajustarBot(JButton bot, int sizeToAdd){
+                bot.setSize(botSize[0]+ sizeToAdd, botSize[1] + sizeToAdd);
+    }
     
     public void atualizarTela(Fase fase, int numeroPergunta) {
         botaoAlternativaA.setText(quebrarTexto(fase.getQuestao(numeroPergunta).getAlternativa('A'), 120));

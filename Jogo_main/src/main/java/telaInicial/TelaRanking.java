@@ -27,7 +27,7 @@ public class TelaRanking extends javax.swing.JFrame {
      */
     public TelaRanking() {
         initComponents();
-        jTable1.setModel(tabelaUsuario);
+        Tabela.setModel(tabelaUsuario);
         getRanking();
         setLocationRelativeTo(null);
     }
@@ -59,15 +59,15 @@ public class TelaRanking extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tabela = new javax.swing.JTable();
         voltarBotao = new javax.swing.JButton();
         logoutImagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tabela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        Tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -86,12 +86,12 @@ public class TelaRanking extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Tabela.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                TabelaMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Tabela);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 580, 480));
 
@@ -115,13 +115,13 @@ public class TelaRanking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+    private void TabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaMouseClicked
         // TODO add your handling code here:
         
-        Ranking r = tabelaUsuario.getDados(jTable1.getSelectedRow());
+        Ranking r = tabelaUsuario.getDados(Tabela.getSelectedRow());
 
-        indexSelecionado = jTable1.getSelectedRow();
-    }//GEN-LAST:event_jTable1MouseClicked
+        indexSelecionado = Tabela.getSelectedRow();
+    }//GEN-LAST:event_TabelaMouseClicked
 
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
         EfeitoSonoro.Play("back.wav");
@@ -167,8 +167,8 @@ public class TelaRanking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tabela;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel logoutImagem;
     private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables

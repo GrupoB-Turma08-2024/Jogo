@@ -144,9 +144,9 @@ public class TelaRemover extends javax.swing.JFrame {
         txtD = new javax.swing.JTextField();
         txtCorreta = new javax.swing.JTextField();
         txtExplicacao = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        removerBotao = new javax.swing.JButton();
+        voltarBotao = new javax.swing.JButton();
+        procurarBotao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -185,24 +185,24 @@ public class TelaRemover extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new Integer[] { }));
 
-        jButton1.setText("Remover");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        removerBotao.setText("Remover");
+        removerBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                removerBotaoActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Voltar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        voltarBotao.setText("Voltar");
+        voltarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                voltarBotaoActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Procurar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        procurarBotao.setText("Procurar");
+        procurarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                procurarBotaoActionPerformed(evt);
             }
         });
 
@@ -214,9 +214,9 @@ public class TelaRemover extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(removerBotao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(voltarBotao))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -265,7 +265,7 @@ public class TelaRemover extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCorreta)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton3)
+                                .addComponent(procurarBotao)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
@@ -278,7 +278,7 @@ public class TelaRemover extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(procurarBotao))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -317,21 +317,21 @@ public class TelaRemover extends javax.swing.JFrame {
                     .addComponent(txtExplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(removerBotao)
+                    .addComponent(voltarBotao))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void procurarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procurarBotaoActionPerformed
         // TODO add your handling code here:
         Integer selectedId = (Integer) jComboBox1.getSelectedItem();
                 if (selectedId != null) {
                     getDados(selectedId);
                 }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_procurarBotaoActionPerformed
 
 private void limparcampos() {
     // Limpar todos os campos relevantes
@@ -345,7 +345,7 @@ private void limparcampos() {
     jComboBox1.setSelectedIndex(0); // Selecione o primeiro item da combobox
 }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void removerBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerBotaoActionPerformed
         // TODO add your handling code here:
         
         boolean validacao = true;
@@ -366,13 +366,13 @@ private void limparcampos() {
 
             JOptionPane.showMessageDialog(this, e.getMessage(), title, pane);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_removerBotaoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
         MenuQuestions mq = new MenuQuestions();
         mq.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_voltarBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,9 +411,6 @@ private void limparcampos() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<Integer> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -426,6 +423,8 @@ private void limparcampos() {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton procurarBotao;
+    private javax.swing.JButton removerBotao;
     private javax.swing.JTextField txtA;
     private javax.swing.JTextField txtB;
     private javax.swing.JTextField txtC;
@@ -435,5 +434,6 @@ private void limparcampos() {
     private javax.swing.JTextField txtExplicacao;
     private javax.swing.JTextField txtFase;
     private javax.swing.JTextField txtPergunta;
+    private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 }

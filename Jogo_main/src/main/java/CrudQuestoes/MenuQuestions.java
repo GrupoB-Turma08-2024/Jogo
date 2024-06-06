@@ -36,7 +36,7 @@ public class MenuQuestions extends javax.swing.JFrame {
         BotConsultar = new javax.swing.JButton();
         BotAlterar = new javax.swing.JButton();
         BotRemover = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        voltarBotao = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,18 +111,18 @@ public class MenuQuestions extends javax.swing.JFrame {
         });
         getContentPane().add(BotRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 170, 40));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("< Voltar");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        voltarBotao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        voltarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        voltarBotao.setText("< Voltar");
+        voltarBotao.setBorder(null);
+        voltarBotao.setContentAreaFilled(false);
+        voltarBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        voltarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                voltarBotaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(voltarBotao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/adm2.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
@@ -135,6 +135,7 @@ public class MenuQuestions extends javax.swing.JFrame {
         EfeitoSonoro.Play("click.wav");
         TelaInserir inserir = new TelaInserir();
         inserir.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotCriarActionPerformed
 
     private void BotConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotConsultarActionPerformed
@@ -142,6 +143,7 @@ public class MenuQuestions extends javax.swing.JFrame {
         EfeitoSonoro.Play("click.wav");
         TelaConsultar consultar = new TelaConsultar();
         consultar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotConsultarActionPerformed
 
     private void BotAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotAlterarActionPerformed
@@ -149,6 +151,7 @@ public class MenuQuestions extends javax.swing.JFrame {
         EfeitoSonoro.Play("click.wav");
         TelaAlterar alterar = new TelaAlterar();
         alterar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotAlterarActionPerformed
 
     private void BotRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotRemoverActionPerformed
@@ -156,13 +159,14 @@ public class MenuQuestions extends javax.swing.JFrame {
         EfeitoSonoro.Play("click.wav");
         TelaRemover remover = new TelaRemover();
         remover.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotRemoverActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
         TelaInicialAdm tia = new TelaInicialAdm();
         tia.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_voltarBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,10 +209,10 @@ public class MenuQuestions extends javax.swing.JFrame {
     private javax.swing.JButton BotConsultar;
     private javax.swing.JButton BotCriar;
     private javax.swing.JButton BotRemover;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel loginTitulo;
+    private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 }

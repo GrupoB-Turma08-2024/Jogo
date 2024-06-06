@@ -265,6 +265,11 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void cadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBotaoActionPerformed
+        if (usuarioText.getText().length() < 6 || senhaText.getText().length() < 6) {
+            JOptionPane.showMessageDialog(null, "Nome de usuário e/ou senha precisa conter mais de 6 caracteres!");
+            return;
+        }
+        
         var dao = new DAO(); 
             Usuario a;
         String email = emailText.getText();
@@ -282,6 +287,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         }else{
             System.out.print("Email não valido");
+            JOptionPane.showMessageDialog(null, "Favor digitar um e-mail válido.");
         }
     }//GEN-LAST:event_cadastrarBotaoActionPerformed
 

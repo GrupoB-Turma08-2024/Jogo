@@ -140,9 +140,9 @@ public class TelaAlterar extends javax.swing.JFrame {
         txtB = new javax.swing.JTextField();
         txtC = new javax.swing.JTextField();
         txtA = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        alterarBotao = new javax.swing.JButton();
+        limparBotao = new javax.swing.JButton();
+        voltarBotao = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         BotProc = new javax.swing.JButton();
@@ -182,19 +182,24 @@ public class TelaAlterar extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setText("Explicação:");
 
-        jButton1.setText("Alterar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        alterarBotao.setText("Alterar");
+        alterarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                alterarBotaoActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Limpar");
-
-        jButton3.setText("Voltar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        limparBotao.setText("Limpar");
+        limparBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                limparBotaoActionPerformed(evt);
+            }
+        });
+
+        voltarBotao.setText("Voltar");
+        voltarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarBotaoActionPerformed(evt);
             }
         });
 
@@ -244,11 +249,11 @@ public class TelaAlterar extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1)
+                            .addComponent(alterarBotao)
                             .addGap(28, 28, 28)
-                            .addComponent(jButton2)
+                            .addComponent(limparBotao)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3))
+                            .addComponent(voltarBotao))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -311,9 +316,9 @@ public class TelaAlterar extends javax.swing.JFrame {
                     .addComponent(txtExplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(alterarBotao)
+                    .addComponent(limparBotao)
+                    .addComponent(voltarBotao))
                 .addGap(18, 18, 18))
         );
 
@@ -328,7 +333,7 @@ public class TelaAlterar extends javax.swing.JFrame {
                 }
     }//GEN-LAST:event_BotProcActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void alterarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarBotaoActionPerformed
         // TODO add your handling code here:
         boolean validacao = true;
         int id = jComboBox2.getSelectedIndex() + 1;
@@ -356,13 +361,25 @@ public class TelaAlterar extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, e.getMessage(), title, pane);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_alterarBotaoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
         MenuQuestions mq = new MenuQuestions();
         mq.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_voltarBotaoActionPerformed
+
+    private void limparBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparBotaoActionPerformed
+                txtFase.setText("");
+                txtDificuldade.setText("");
+                txtPergunta.setText("");
+                txtA.setText("");
+                txtB.setText("");
+                txtC.setText("");
+                txtD.setText("");
+                txtCorreta.setText("");
+                txtExplicacao.setText("");
+    }//GEN-LAST:event_limparBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,9 +419,7 @@ public class TelaAlterar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotProc;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton alterarBotao;
     private javax.swing.JComboBox<Integer> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -417,6 +432,7 @@ public class TelaAlterar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton limparBotao;
     private javax.swing.JTextField txtA;
     private javax.swing.JTextField txtB;
     private javax.swing.JTextField txtC;
@@ -426,5 +442,6 @@ public class TelaAlterar extends javax.swing.JFrame {
     private javax.swing.JTextField txtExplicacao;
     private javax.swing.JTextField txtFase;
     private javax.swing.JTextField txtPergunta;
+    private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author felip
  */
-public class RedefinirSenha extends javax.swing.JFrame {
+public class TelaCodigo extends javax.swing.JFrame {
      public static String codigoTemporario;
     
     
@@ -23,7 +23,7 @@ public class RedefinirSenha extends javax.swing.JFrame {
     /**
      * Creates new form RedefinirSenha
      */
-    public RedefinirSenha() {
+    public TelaCodigo() {
         initComponents();
     }
     public boolean verificaCodigo(String codigo) throws Exception {
@@ -53,15 +53,15 @@ public class RedefinirSenha extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        avancar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Avançar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        avancar.setText("Avançar");
+        avancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                avancarActionPerformed(evt);
             }
         });
 
@@ -80,7 +80,7 @@ public class RedefinirSenha extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
-                        .addComponent(jButton1)))
+                        .addComponent(avancar)))
                 .addGap(0, 143, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,14 +91,14 @@ public class RedefinirSenha extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(39, 39, 39)
-                .addComponent(jButton1)
+                .addComponent(avancar)
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void avancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avancarActionPerformed
         // TODO add your handling code here:
         String codigo = jTextField1.getText();
         codigoTemporario = jTextField1.getText();
@@ -106,15 +106,15 @@ public class RedefinirSenha extends javax.swing.JFrame {
             Boolean real = verificaCodigo(codigo);
             if (real == true){
                 System.out.print("Codigo ta certo");
-                RedefinirSenha2 tp = new RedefinirSenha2();
+                TelaRedefinirSenha tp = new TelaRedefinirSenha();
                 tp.setVisible(true);
             }else{
                 System.out.print("Codigo ta errado");
             }
         } catch (Exception ex) {
-            Logger.getLogger(RedefinirSenha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCodigo.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_avancarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,26 +133,27 @@ public class RedefinirSenha extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RedefinirSenha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCodigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RedefinirSenha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCodigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RedefinirSenha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCodigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RedefinirSenha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCodigo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RedefinirSenha().setVisible(true);
+                new TelaCodigo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton avancar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
