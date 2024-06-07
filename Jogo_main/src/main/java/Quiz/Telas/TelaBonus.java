@@ -1,10 +1,12 @@
 package Quiz.Telas;
 
 import Quiz.QuizManager;
+import javax.swing.JButton;
 
 public class TelaBonus extends javax.swing.JFrame{
     
     QuizManager q;
+    private static final int[] botSize = {220, 120};
     
     public TelaBonus(QuizManager q) {
         this.q = q;
@@ -23,41 +25,59 @@ public class TelaBonus extends javax.swing.JFrame{
         backgroundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 593));
         setMinimumSize(new java.awt.Dimension(1000, 593));
-        setPreferredSize(new java.awt.Dimension(1000, 593));
         setResizable(false);
         getContentPane().setLayout(null);
 
         botaoNao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/botao_não.png"))); // NOI18N
+        botaoNao.setBorder(null);
+        botaoNao.setBorderPainted(false);
         botaoNao.setContentAreaFilled(false);
         botaoNao.setMaximumSize(new java.awt.Dimension(220, 120));
         botaoNao.setMinimumSize(new java.awt.Dimension(220, 120));
         botaoNao.setPreferredSize(new java.awt.Dimension(220, 120));
+        botaoNao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoNaoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoNaoMouseExited(evt);
+            }
+        });
         botaoNao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoNaoActionPerformed(evt);
             }
         });
         getContentPane().add(botaoNao);
-        botaoNao.setBounds(650, 440, 220, 120);
+        botaoNao.setBounds(160, 430, 220, 120);
 
         botaoSim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/botao_sim.png"))); // NOI18N
+        botaoSim.setBorder(null);
+        botaoSim.setBorderPainted(false);
         botaoSim.setContentAreaFilled(false);
         botaoSim.setMaximumSize(new java.awt.Dimension(220, 120));
         botaoSim.setMinimumSize(new java.awt.Dimension(220, 120));
         botaoSim.setPreferredSize(new java.awt.Dimension(220, 120));
+        botaoSim.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoSimMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoSimMouseExited(evt);
+            }
+        });
         botaoSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoSimActionPerformed(evt);
             }
         });
         getContentPane().add(botaoSim);
-        botaoSim.setBounds(90, 440, 220, 120);
+        botaoSim.setBounds(650, 430, 220, 120);
 
-        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/tela_bonus.png"))); // NOI18N
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/tela_bonus_1.jpeg"))); // NOI18N
         getContentPane().add(backgroundLabel);
-        backgroundLabel.setBounds(0, 0, 1000, 562);
+        backgroundLabel.setBounds(0, -10, 1000, 593);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -71,6 +91,26 @@ public class TelaBonus extends javax.swing.JFrame{
         q.getTelaQuiz().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoSimActionPerformed
+
+    private void botaoNaoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoNaoMouseEntered
+        ajustarBot(botaoNao, 5);
+    }//GEN-LAST:event_botaoNaoMouseEntered
+
+    private void botaoNaoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoNaoMouseExited
+        ajustarBot(botaoNao, 0);
+    }//GEN-LAST:event_botaoNaoMouseExited
+
+    private void botaoSimMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSimMouseEntered
+        ajustarBot(botaoSim, 5);
+    }//GEN-LAST:event_botaoSimMouseEntered
+
+    private void botaoSimMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSimMouseExited
+        ajustarBot(botaoSim, 0);
+    }//GEN-LAST:event_botaoSimMouseExited
+    
+    private void ajustarBot(JButton bot, int sizeToAdd){
+                bot.setSize(botSize[0]+ sizeToAdd, botSize[1] + sizeToAdd);
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLabel;
