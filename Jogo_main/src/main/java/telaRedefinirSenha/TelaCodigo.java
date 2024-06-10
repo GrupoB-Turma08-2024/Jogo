@@ -98,6 +98,11 @@ public class TelaCodigo extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 250, 60));
 
         avancar.setBackground(new java.awt.Color(51, 0, 0));
@@ -149,7 +154,7 @@ public class TelaCodigo extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(TelaCodigo.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        dispose();
     }//GEN-LAST:event_avancarActionPerformed
 
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
@@ -158,6 +163,10 @@ public class TelaCodigo extends javax.swing.JFrame {
         ts.setVisible (true);
         dispose();
     }//GEN-LAST:event_voltarBotaoActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

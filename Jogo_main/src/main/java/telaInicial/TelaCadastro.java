@@ -94,7 +94,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         senhaText.setToolTipText("Digite a senha");
         senhaText.setBorder(null);
         senhaText.setCaretColor(new java.awt.Color(255, 255, 255));
-        senhaText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        senhaText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         senhaText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 senhaTextFocusGained(evt);
@@ -136,7 +136,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         emailText.setToolTipText("Digite o e-mail\n");
         emailText.setBorder(null);
         emailText.setCaretColor(new java.awt.Color(255, 255, 255));
-        emailText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        emailText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         emailText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 emailTextFocusGained(evt);
@@ -159,7 +159,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         serieText.setToolTipText("Digite sua série");
         serieText.setBorder(null);
         serieText.setCaretColor(new java.awt.Color(255, 255, 255));
-        serieText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        serieText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         serieText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 serieTextFocusGained(evt);
@@ -182,7 +182,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         usuarioText.setToolTipText("Digite o usuário");
         usuarioText.setBorder(null);
         usuarioText.setCaretColor(new java.awt.Color(255, 255, 255));
-        usuarioText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        usuarioText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         usuarioText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usuarioTextFocusGained(evt);
@@ -271,7 +271,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void cadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBotaoActionPerformed
-       if (usuarioText.getText().length() < 6 || senhaText.getText().length() < 6) {
+        if (usuarioText.getText().length() < 6 || senhaText.getText().length() < 6) {
             JOptionPane.showMessageDialog(null, "Nome de usuário e/ou senha precisa conter no mínimo 6 caracteres!");
             return;
         }
@@ -292,25 +292,26 @@ public class TelaCadastro extends javax.swing.JFrame {
         boolean isValidEmail = isValidEmail(email);
         boolean isDomainValid = isDomainValid(email);
         boolean w = email.endsWith("@jpiaget.pro.br");
+
         if (isValidEmail && isDomainValid) {
             try {
                 a = new Usuario(usuarioText.getText(), email, senhaText.getText(), serie);
-                if (w == true){
-                    dao.cadastrarAdmin(a);
-                    System.out.println("Admin cadastrado com sucesso!");
-                }else{
-                    dao.cadastrarUsuario(a);
-                    System.out.println("Usuário cadastrado com sucesso!");
-
-                }
-            } catch (Exception ex) {
-            Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                if (w) {
+                dao.cadastrarAdmin(a);
+                JOptionPane.showMessageDialog(null, "Admin cadastrado com sucesso!");
+                System.out.println("Admin cadastrado com sucesso!");
+            } else {
+                dao.cadastrarUsuario(a);
+                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
+                System.out.println("Usuário cadastrado com sucesso!");
             }
-        } else {
-            System.out.println("Email inválido");
-            JOptionPane.showMessageDialog(null, "Favor digitar um e-mail válido.");
+         } catch (Exception ex) {
+            Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+    } else {
+        System.out.println("Email inválido");
+        JOptionPane.showMessageDialog(null, "Favor digitar um e-mail válido.");
+    }
     }//GEN-LAST:event_cadastrarBotaoActionPerformed
 
     private void serieTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serieTextFocusGained

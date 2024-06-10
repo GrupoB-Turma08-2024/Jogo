@@ -195,11 +195,11 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaTextFocusLost
 
     private void usuarioTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTextActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("text.wav");
     }//GEN-LAST:event_usuarioTextActionPerformed
 
     private void senhaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaTextActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("text.wav");
     }//GEN-LAST:event_senhaTextActionPerformed
 
     private void cadastrarBotaoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarBotaoMouseEntered
@@ -226,6 +226,7 @@ public class TelaLogin extends javax.swing.JFrame {
             if (dao.existe(u)) {
                 if (dao.existeAdm(u)) {
                     JOptionPane.showMessageDialog(null,"O jogador é um administrador.");
+                    entrarBotao.setCursor(new Cursor(Cursor.WAIT_CURSOR));
                     TelaInicialAdm inserir = new TelaInicialAdm();
                     u.setIdUsuario(dao.pegarIdJogador(u.getNome()));
                     Pontuacao.setarJogador(u.getIdUsuario(), u.getNome());
@@ -234,6 +235,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(null,"O jogador é um aluno.");
                 // Ação para jogador
+                    entrarBotao.setCursor(new Cursor(Cursor.WAIT_CURSOR));
                     TelaPrincipal inserir = new TelaPrincipal();
                     u.setIdUsuario(dao.pegarIdJogador(u.getNome()));
                     Pontuacao.setarJogador(u.getIdUsuario(), u.getNome());

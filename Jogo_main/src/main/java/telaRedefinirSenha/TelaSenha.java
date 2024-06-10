@@ -150,7 +150,7 @@ public class TelaSenha extends javax.swing.JFrame {
     }//GEN-LAST:event_entrarBotaoActionPerformed
 
     private void esqueceuSenhaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esqueceuSenhaTextActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("text.wav");
     }//GEN-LAST:event_esqueceuSenhaTextActionPerformed
 
     private void esqueceuSenhaTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_esqueceuSenhaTextFocusLost

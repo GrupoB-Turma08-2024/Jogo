@@ -104,6 +104,7 @@ public class TelaConsultar extends javax.swing.JFrame {
         procurarBotao.setForeground(new java.awt.Color(255, 255, 255));
         procurarBotao.setText("Procurar");
         procurarBotao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        procurarBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         procurarBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 procurarBotaoActionPerformed(evt);

@@ -262,6 +262,11 @@ public class TelaRemover extends javax.swing.JFrame {
         txtCorreta.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtCorreta.setForeground(new java.awt.Color(255, 255, 255));
         txtCorreta.setBorder(null);
+        txtCorreta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorretaActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtCorreta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 780, 20));
 
         loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 36)); // NOI18N
@@ -345,12 +350,22 @@ public class TelaRemover extends javax.swing.JFrame {
         txtExplicacao.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtExplicacao.setForeground(new java.awt.Color(255, 255, 255));
         txtExplicacao.setBorder(null);
+        txtExplicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtExplicacaoActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtExplicacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 730, -1));
 
         txtD.setBackground(new java.awt.Color(0,0,0,1));
         txtD.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtD.setForeground(new java.awt.Color(255, 255, 255));
         txtD.setBorder(null);
+        txtD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 780, 20));
 
         txtB.setBackground(new java.awt.Color(0,0,0,1));
@@ -358,12 +373,22 @@ public class TelaRemover extends javax.swing.JFrame {
         txtB.setForeground(new java.awt.Color(255, 255, 255));
         txtB.setToolTipText("Digite a alternativa B");
         txtB.setBorder(null);
+        txtB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 780, 20));
 
         txtC.setBackground(new java.awt.Color(0,0,0,1));
         txtC.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtC.setForeground(new java.awt.Color(255, 255, 255));
         txtC.setBorder(null);
+        txtC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 780, 20));
 
         txtA.setBackground(new java.awt.Color(0,0,0,1));
@@ -483,7 +508,7 @@ public class TelaRemover extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPerguntaActionPerformed
 
     private void txtAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("text.wav");
     }//GEN-LAST:event_txtAActionPerformed
 
     private void txtAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAFocusLost
@@ -543,6 +568,26 @@ public class TelaRemover extends javax.swing.JFrame {
     private void txtDificuldadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDificuldadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDificuldadeActionPerformed
+
+    private void txtBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_txtBActionPerformed
+
+    private void txtCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_txtCActionPerformed
+
+    private void txtDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_txtDActionPerformed
+
+    private void txtCorretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorretaActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_txtCorretaActionPerformed
+
+    private void txtExplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtExplicacaoActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_txtExplicacaoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

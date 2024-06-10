@@ -6,6 +6,7 @@ package Usuario;
 
 import Connection.ConnectionFactory;
 import CrudQuestoes.TelaInicialAdm;
+import java.awt.Cursor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -91,7 +92,6 @@ public class CrudUsuarios extends javax.swing.JFrame {
         ButSalvar = new javax.swing.JButton();
         ButAlterar = new javax.swing.JButton();
         ButRemover = new javax.swing.JButton();
-        ButNovo = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,7 +118,7 @@ public class CrudUsuarios extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 520, 150));
 
         txtNome.setBackground(new java.awt.Color(0,0,0,1));
-        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtNome.setForeground(new java.awt.Color(255, 255, 255));
         txtNome.setBorder(null);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -164,14 +164,25 @@ public class CrudUsuarios extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 50, -1));
 
         txtEmail.setBackground(new java.awt.Color(0,0,0,1));
-        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(255, 255, 255));
         txtEmail.setBorder(null);
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 181, 420, 20));
 
         txtSenha.setBackground(new java.awt.Color(0,0,0,1));
+        txtSenha.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setBorder(null);
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 420, 20));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 10));
 
@@ -180,48 +191,39 @@ public class CrudUsuarios extends javax.swing.JFrame {
         ButSalvar.setForeground(new java.awt.Color(255, 255, 255));
         ButSalvar.setText("Salvar");
         ButSalvar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        ButSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(ButSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 100, 30));
+        getContentPane().add(ButSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, 100, 30));
 
         ButAlterar.setBackground(new java.awt.Color(6, 16, 6));
         ButAlterar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButAlterar.setForeground(new java.awt.Color(255, 255, 255));
         ButAlterar.setText("Atualizar");
         ButAlterar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        ButAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButAlterarActionPerformed(evt);
             }
         });
-        getContentPane().add(ButAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 100, 30));
+        getContentPane().add(ButAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, 100, 30));
 
         ButRemover.setBackground(new java.awt.Color(6, 16, 6));
         ButRemover.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButRemover.setForeground(new java.awt.Color(255, 255, 255));
         ButRemover.setText("Remover");
         ButRemover.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        ButRemover.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButRemoverActionPerformed(evt);
             }
         });
         getContentPane().add(ButRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, 100, 30));
-
-        ButNovo.setBackground(new java.awt.Color(6, 16, 6));
-        ButNovo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        ButNovo.setForeground(new java.awt.Color(255, 255, 255));
-        ButNovo.setText("Criar Usuário");
-        ButNovo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-        ButNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButNovoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ButNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 110, 30));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/adm2.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
@@ -231,87 +233,93 @@ public class CrudUsuarios extends javax.swing.JFrame {
 
     private void ButSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButSalvarActionPerformed
         EfeitoSonoro.Play("click.wav");
-
+        ButSalvar.setCursor(new Cursor(Cursor.WAIT_CURSOR));
         String nome = txtNome.getText();
         boolean validacao = true;
-        try{
-                if (!usuarioExiste(nome)) {
-                    Usuario u = new Usuario(nome, txtEmail.getText(), txtSenha.getText());
-                    validacao = false;
-            
-                    UsuarioService.insert(u);
-            
-                    this.getUsuarios();
-                    limparCampos();
-                }else{
-                    JOptionPane.showMessageDialog(this,"Usuario já existe");
-                }
-        }
-        catch (Exception e)
-        {
+        try {
+            if (!usuarioExiste(nome)) {
+                
+                Usuario u = new Usuario(nome, txtEmail.getText(), txtSenha.getText());
+                validacao = false;
+
+                UsuarioService.insert(u);
+
+                // Adicionar mensagem de sucesso
+                JOptionPane.showMessageDialog(this, "Usuário criado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                this.getUsuarios();
+                limparCampos();
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuário já existe", "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (Exception e) {
             String title = validacao ? "Validação" : "Erro";
             int pane = validacao ? JOptionPane.INFORMATION_MESSAGE : JOptionPane.ERROR_MESSAGE;
 
             JOptionPane.showMessageDialog(this, e.getMessage(), title, pane);
         }
-   
+
     }//GEN-LAST:event_ButSalvarActionPerformed
 
     private void ButRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRemoverActionPerformed
-        EfeitoSonoro.Play("click.wav");
-        
-        if (this.indexSelecionado == -1)
-            return;
+EfeitoSonoro.Play("click.wav");
 
-        try
-        {
-            Usuario u = this.tabelaUsuario.getUsuario(this.indexSelecionado);
-            UsuarioService.delete(u);
+if (this.indexSelecionado == -1)
+    return;
 
-            this.tabelaUsuario.removeRow(this.indexSelecionado);
-            this.limparCampos();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Erro ao deletar usuário", JOptionPane.ERROR_MESSAGE);
-        }
+try
+{
+    ButRemover.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    Usuario u = this.tabelaUsuario.getUsuario(this.indexSelecionado);
+    UsuarioService.delete(u);
+
+    this.tabelaUsuario.removeRow(this.indexSelecionado);
+    this.limparCampos();
+    
+    // Adiciona a mensagem de sucesso
+    JOptionPane.showMessageDialog(this, "O usuário foi removido com sucesso.", "Usuário Removido", JOptionPane.INFORMATION_MESSAGE);
+}
+catch (Exception e)
+{
+    JOptionPane.showMessageDialog(this, e.getMessage(), "Erro ao deletar usuário", JOptionPane.ERROR_MESSAGE);
+}
+
     }//GEN-LAST:event_ButRemoverActionPerformed
 
     private void ButAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButAlterarActionPerformed
-        EfeitoSonoro.Play("click.wav");
-        if (indexSelecionado == -1)
-            return;
+EfeitoSonoro.Play("click.wav");
+if (indexSelecionado == -1) {
+    ButAlterar.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    return;
+}
 
-        boolean validacao = true;
-        try
-        {
-            Usuario u = this.tabelaUsuario.getUsuario(this.indexSelecionado);
-            u.setNome(this.txtNome.getText());
-            u.setEmail(this.txtEmail.getText());
-            u.setSenha(this.txtSenha.getText());
-            validacao = false;
-            
-            UsuarioService.update(u);
-            this.tabelaUsuario.atualizar(u, this.indexSelecionado);
+boolean validacao = true;
+try {
+    Usuario u = this.tabelaUsuario.getUsuario(this.indexSelecionado);
+    u.setNome(this.txtNome.getText());
+    u.setEmail(this.txtEmail.getText());
+    u.setSenha(this.txtSenha.getText());
+    validacao = false;
 
-            this.limparCampos();
-        }
-        catch (Exception e)
-        {
-            String title = validacao ? "Validação" : "Erro";
-            int pane = validacao ? JOptionPane.INFORMATION_MESSAGE : JOptionPane.ERROR_MESSAGE;
+    UsuarioService.update(u);
+    this.tabelaUsuario.atualizar(u, this.indexSelecionado);
 
-            JOptionPane.showMessageDialog(this, e.getMessage(), title, pane);
-        }
+    // Adicionar mensagem de sucesso
+    JOptionPane.showMessageDialog(this, "Usuário alterado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+    this.limparCampos();
+} catch (Exception e) {
+    String title = validacao ? "Validação" : "Erro";
+    int pane = validacao ? JOptionPane.INFORMATION_MESSAGE : JOptionPane.ERROR_MESSAGE;
+
+    JOptionPane.showMessageDialog(this, e.getMessage(), title, pane);
+}
+
+
     }//GEN-LAST:event_ButAlterarActionPerformed
 
-    private void ButNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButNovoActionPerformed
-        // TODO add your handling code here:
-        limparCampos();
-    }//GEN-LAST:event_ButNovoActionPerformed
-
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
+       EfeitoSonoro.Play("text.wav");
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void JTableUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTableUsuariosMouseClicked
@@ -331,6 +339,14 @@ public class CrudUsuarios extends javax.swing.JFrame {
         mq.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarBotaoActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        EfeitoSonoro.Play("text.wav");
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,7 +407,6 @@ public class CrudUsuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButAlterar;
-    private javax.swing.JButton ButNovo;
     private javax.swing.JButton ButRemover;
     private javax.swing.JButton ButSalvar;
     private javax.swing.JTable JTableUsuarios;
