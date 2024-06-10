@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author felip
@@ -25,6 +26,8 @@ public class TelaCodigo extends javax.swing.JFrame {
      */
     public TelaCodigo() {
         initComponents();
+        setLocationRelativeTo(null);
+        jTextField1.setOpaque(false);
     }
     public boolean verificaCodigo(String codigo) throws Exception {
     String sql = "SELECT COUNT(*) FROM Jogador WHERE codigo = ?";
@@ -52,48 +55,62 @@ public class TelaCodigo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
+        loginTitulo = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         avancar = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Digite abaixo o código recebido por e-mail.");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
+
+        loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 48)); // NOI18N
+        loginTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        loginTitulo.setText("INSIRA O CÓDIGO");
+        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 300, -1));
+
+        jTextField1.setBackground(new java.awt.Color(0,0,0,1));
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(null);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 250, 60));
+
+        avancar.setBackground(new java.awt.Color(51, 0, 0));
+        avancar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        avancar.setForeground(new java.awt.Color(255, 255, 255));
         avancar.setText("Avançar");
+        avancar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         avancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 avancarActionPerformed(evt);
             }
         });
+        getContentPane().add(avancar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 100, 30));
+
+        jSeparator7.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 250, 10));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/adm1.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/adm1.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         jLabel1.setText("Código:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 131, 57, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(avancar)))
-                .addGap(0, 143, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(39, 39, 39)
-                .addComponent(avancar)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -104,16 +121,19 @@ public class TelaCodigo extends javax.swing.JFrame {
         codigoTemporario = jTextField1.getText();
         try {
             Boolean real = verificaCodigo(codigo);
-            if (real == true){
-                System.out.print("Codigo ta certo");
+            if (real == true) {
+                System.out.print("Código verificado!");
                 TelaRedefinirSenha tp = new TelaRedefinirSenha();
                 tp.setVisible(true);
-            }else{
+                this.dispose();
+            } else {
                 System.out.print("Codigo ta errado");
+                JOptionPane.showMessageDialog(null, "O código digitado está errado...", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception ex) {
             Logger.getLogger(TelaCodigo.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }//GEN-LAST:event_avancarActionPerformed
 
     /**
@@ -155,6 +175,12 @@ public class TelaCodigo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton avancar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel loginTitulo;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,12 +26,18 @@ public class TelaCadastro extends javax.swing.JFrame {
         usuarioText.setText("Digite o usuário");
         serieText.setText("Digite sua série");
     }
-    public static boolean isValidEmail(String email) {
+    public static boolean isValidEmail(String email) {  
         if (email == null) return false;
+        if (email.endsWith("@jpiaget.pro.br")) return true;
+        
         Matcher matcher = EMAIL_PATTERN.matcher(email);
         return matcher.matches();
+          
     }
     public static boolean isDomainValid(String email) {
+        if (email == null) return false;
+
+        if (email.endsWith("@jpiaget.pro.br")) return true;
         try {
             String domain = email.substring(email.indexOf("@") + 1);
             InetAddress.getByName(domain);
@@ -144,7 +150,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 emailTextActionPerformed(evt);
             }
         });
-        getContentPane().add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 180, 20));
+        getContentPane().add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 180, 30));
 
         serieText.setBackground(new java.awt.Color(0,0,0,1));
         serieText.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -167,7 +173,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 serieTextActionPerformed(evt);
             }
         });
-        getContentPane().add(serieText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 180, 20));
+        getContentPane().add(serieText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 180, 30));
 
         usuarioText.setBackground(new java.awt.Color(0,0,0,1));
         usuarioText.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -265,30 +271,46 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void cadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBotaoActionPerformed
-        if (usuarioText.getText().length() < 6 || senhaText.getText().length() < 6) {
-            JOptionPane.showMessageDialog(null, "Nome de usuário e/ou senha precisa conter mais de 6 caracteres!");
+       if (usuarioText.getText().length() < 6 || senhaText.getText().length() < 6) {
+            JOptionPane.showMessageDialog(null, "Nome de usuário e/ou senha precisa conter no mínimo 6 caracteres!");
             return;
         }
-        
+
         var dao = new DAO(); 
-            Usuario a;
+        Usuario a;
         String email = emailText.getText();
         String s = serieText.getText();
-        int serie = Integer.parseInt(s);
-        boolean b = isValidEmail(email);
-        boolean c = isDomainValid(email);
-        if (b == true && c == true){
+        int serie;
+
+        try {
+            serie = Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Série deve ser um número válido.");
+            return;
+        }
+
+        boolean isValidEmail = isValidEmail(email);
+        boolean isDomainValid = isDomainValid(email);
+        boolean w = email.endsWith("@jpiaget.pro.br");
+        if (isValidEmail && isDomainValid) {
             try {
                 a = new Usuario(usuarioText.getText(), email, senhaText.getText(), serie);
-                dao.cadastrarUsuario(a);
-                System.out.println("Usuario cadastrado");
+                if (w == true){
+                    dao.cadastrarAdmin(a);
+                    System.out.println("Admin cadastrado com sucesso!");
+                }else{
+                    dao.cadastrarUsuario(a);
+                    System.out.println("Usuário cadastrado com sucesso!");
+
+                }
             } catch (Exception ex) {
-                Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else{
-            System.out.print("Email não valido");
+        } else {
+            System.out.println("Email inválido");
             JOptionPane.showMessageDialog(null, "Favor digitar um e-mail válido.");
         }
+
     }//GEN-LAST:event_cadastrarBotaoActionPerformed
 
     private void serieTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serieTextFocusGained
@@ -304,7 +326,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_serieTextFocusLost
 
     private void serieTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serieTextActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_serieTextActionPerformed
 
     /**

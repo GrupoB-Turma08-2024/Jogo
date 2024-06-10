@@ -18,12 +18,14 @@ import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 import telaInicial.TelaLogin;
 import telaInicial.TelaPrincipal;
+import static telaRedefinirSenha.Email.sendEmail;
 
 public class TelaSenha extends javax.swing.JFrame {
 
     public TelaSenha() {
         initComponents();
         this.setLocationRelativeTo(null);
+        esqueceuSenhaText.setOpaque(false);
         esqueceuSenhaText.setText("Digite o e-mail");
     }
     public void salvarCodigo(String email, String codigo) throws Exception {
@@ -134,12 +136,15 @@ public class TelaSenha extends javax.swing.JFrame {
         String email = esqueceuSenhaText.getText();
         String code = generateCode();
         try {
+            sendEmail(email, code);
             salvarCodigo(email,code);
+            System.out.println("Email enviado com sucesso!");
+            TelaCodigo tp = new TelaCodigo();
+            tp.setVisible(true);
         } catch (Exception ex) {
             Logger.getLogger(TelaSenha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        TelaCodigo tp = new TelaCodigo();
-        tp.setVisible(true);
+      
     }//GEN-LAST:event_entrarBotaoActionPerformed
 
     private void esqueceuSenhaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esqueceuSenhaTextActionPerformed

@@ -6,6 +6,7 @@ import Usuario.Usuario;
 import CrudQuestoes.TelaInicialAdm;
 import SistemaPontos.Pontuacao;
 import java.awt.Cursor;
+import telaRedefinirSenha.*;
 import java.util.HashSet;
 import java.util.Set;
 import javax.swing.JOptionPane;
@@ -69,6 +70,8 @@ public class TelaLogin extends javax.swing.JFrame {
         esqueciSenhaBotao.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         esqueciSenhaBotao.setForeground(new java.awt.Color(255, 255, 255));
         esqueciSenhaBotao.setText("Esqueceu a senha?");
+        esqueciSenhaBotao.setBorder(null);
+        esqueciSenhaBotao.setBorderPainted(false);
         esqueciSenhaBotao.setContentAreaFilled(false);
         esqueciSenhaBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         esqueciSenhaBotao.addMouseListener(new java.awt.event.MouseAdapter() {

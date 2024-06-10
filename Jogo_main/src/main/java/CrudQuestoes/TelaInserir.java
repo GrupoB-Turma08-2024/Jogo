@@ -150,7 +150,7 @@ public class TelaInserir extends javax.swing.JFrame {
                 txtPerguntaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPergunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 800, -1));
+        getContentPane().add(txtPergunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 780, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 780, 10));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 780, 10));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 780, 10));
@@ -226,6 +226,7 @@ public class TelaInserir extends javax.swing.JFrame {
 
         txtExplicacao.setBackground(new java.awt.Color(0,0,0,1));
         txtExplicacao.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtExplicacao.setForeground(new java.awt.Color(255, 255, 255));
         txtExplicacao.setBorder(null);
         getContentPane().add(txtExplicacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 730, -1));
 
@@ -266,7 +267,7 @@ public class TelaInserir extends javax.swing.JFrame {
                 txtAActionPerformed(evt);
             }
         });
-        getContentPane().add(txtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 800, -1));
+        getContentPane().add(txtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 780, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/adm2.jpg"))); // NOI18N
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, -1, 1000, 560));

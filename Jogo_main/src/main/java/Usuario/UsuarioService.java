@@ -38,8 +38,13 @@ public class UsuarioService {
                 String emailAluno = rs.getString(4);
                 String senha = rs.getString(5);
 
-                Usuario u = new Usuario(id, nome, emailAdmin, emailAluno, senha);
-                usuarios.add(u);
+                if (emailAdmin != null) {
+                    Usuario u = new Usuario(id, nome, emailAdmin, senha);
+                    usuarios.add(u);
+                }if (emailAluno != null){
+                    Usuario u = new Usuario(id, nome, emailAluno, senha);
+                    usuarios.add(u);
+                }
             }
 
             return usuarios;

@@ -104,6 +104,11 @@ public class TelaMenu extends javax.swing.JFrame {
         creditoBotao.setContentAreaFilled(false);
         creditoBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         creditoBotao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        creditoBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditoBotaoActionPerformed(evt);
+            }
+        });
         getContentPane().add(creditoBotao, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, -1, -1));
 
         sobreNosBotao.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -194,6 +199,13 @@ public class TelaMenu extends javax.swing.JFrame {
         EfeitoSonoro.Play("back.wav");
         EfeitoSonoro.setLigado(false);
     }//GEN-LAST:event_offEfeitoBotaoActionPerformed
+
+    private void creditoBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditoBotaoActionPerformed
+        EfeitoSonoro.Play("click.wav");
+        TelaCreditos tc = new TelaCreditos();
+        tc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_creditoBotaoActionPerformed
 
     public static void main(String args[]) {
 

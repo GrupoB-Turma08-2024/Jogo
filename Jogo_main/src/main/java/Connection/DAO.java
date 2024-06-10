@@ -90,7 +90,30 @@ public class DAO {
         con.close();
 
     }
+    public void cadastrarAdmin(Usuario Usuario) throws Exception {
 
+        con = ConnectionFactory.obterConexao();
+
+        String sql = "INSERT INTO Jogador (nomeJogador, emailAdmin, senhaJogador, serie) VALUES (?,?,?,?);";
+        
+        PreparedStatement ps = con.prepareStatement(sql);
+        //ps.setLong(1, 3);
+        ps.setString(1, Usuario.getNome());
+        ps.setString(2, Usuario.getEmail());
+        ps.setString(3, Usuario.getSenha());
+        ps.setInt(4, Usuario.getSerie());
+
+        // ps.execute();
+
+        // int resultado = 
+        ps.executeUpdate();
+        //if (resultado == 1) {
+         //   System.out.println("Dados inseridos com sucesso!");
+        //}
+        ps.close();
+        con.close();
+
+    }
     public String selecionarUsuario(Usuario u) throws Exception {
         String sql = "SELECT * FROM Jogador";
         Connection con = null;

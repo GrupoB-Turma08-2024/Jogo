@@ -45,8 +45,8 @@ public class Email {
         }
     }
     public static void sendEmail(String recipientEmail, String code) throws MessagingException {
-        String from = "felipeduarteabc@gmail.com";
-        String password = "pvpp shkn lmbp iswl";
+        String from = "brollijogo@gmail.com";
+        String password = "dvqr plyj zyen yqei";
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");

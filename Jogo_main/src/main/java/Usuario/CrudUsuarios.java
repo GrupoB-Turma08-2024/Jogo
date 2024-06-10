@@ -5,6 +5,7 @@
 package Usuario;
 
 import Connection.ConnectionFactory;
+import CrudQuestoes.TelaInicialAdm;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import telaInicial.EfeitoSonoro;
 
 /**
  *
@@ -73,19 +75,24 @@ public class CrudUsuarios extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         JTableUsuarios = new javax.swing.JTable();
         txtNome = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        voltarBotao = new javax.swing.JButton();
+        loginTitulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         txtSenha = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
         ButSalvar = new javax.swing.JButton();
         ButAlterar = new javax.swing.JButton();
         ButRemover = new javax.swing.JButton();
         ButNovo = new javax.swing.JButton();
-        ButSair = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JTableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,136 +112,121 @@ public class CrudUsuarios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(JTableUsuarios);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 520, 150));
+
+        txtNome.setBackground(new java.awt.Color(0,0,0,1));
+        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
+        txtNome.setBorder(null);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 420, 20));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 420, 10));
 
+        voltarBotao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        voltarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        voltarBotao.setText("< Voltar");
+        voltarBotao.setBorder(null);
+        voltarBotao.setContentAreaFilled(false);
+        voltarBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        voltarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarBotaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltarBotao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 40)); // NOI18N
+        loginTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        loginTitulo.setText("EDITAR USUÁRIOS");
+        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 15)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, 20));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Senha:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 50, -1));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 420, 10));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Email:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 50, -1));
 
+        txtEmail.setBackground(new java.awt.Color(0,0,0,1));
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmail.setBorder(null);
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 181, 420, 20));
+
+        txtSenha.setBackground(new java.awt.Color(0,0,0,1));
+        txtSenha.setBorder(null);
+        getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 420, 20));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 10));
+
+        ButSalvar.setBackground(new java.awt.Color(6, 16, 6));
+        ButSalvar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButSalvar.setForeground(new java.awt.Color(255, 255, 255));
         ButSalvar.setText("Salvar");
+        ButSalvar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         ButSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButSalvarActionPerformed(evt);
             }
         });
+        getContentPane().add(ButSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 100, 30));
 
+        ButAlterar.setBackground(new java.awt.Color(6, 16, 6));
+        ButAlterar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButAlterar.setForeground(new java.awt.Color(255, 255, 255));
         ButAlterar.setText("Atualizar");
+        ButAlterar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         ButAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButAlterarActionPerformed(evt);
             }
         });
+        getContentPane().add(ButAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 100, 30));
 
+        ButRemover.setBackground(new java.awt.Color(6, 16, 6));
+        ButRemover.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButRemover.setForeground(new java.awt.Color(255, 255, 255));
         ButRemover.setText("Remover");
+        ButRemover.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         ButRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButRemoverActionPerformed(evt);
             }
         });
+        getContentPane().add(ButRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, 100, 30));
 
+        ButNovo.setBackground(new java.awt.Color(6, 16, 6));
+        ButNovo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButNovo.setForeground(new java.awt.Color(255, 255, 255));
         ButNovo.setText("Criar Usuário");
+        ButNovo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         ButNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButNovoActionPerformed(evt);
             }
         });
+        getContentPane().add(ButNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 110, 30));
 
-        ButSair.setText("Voltar");
-        ButSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButSairActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Manter Usuarios");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(ButSalvar)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(4, 4, 4)
-                                        .addComponent(txtNome))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtSenha))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtEmail)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(ButAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                        .addComponent(ButRemover)
-                        .addGap(130, 130, 130)
-                        .addComponent(ButNovo)
-                        .addGap(97, 97, 97))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(ButSair)
-                .addGap(275, 275, 275)
-                .addComponent(jLabel4)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(ButSair))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButSalvar)
-                    .addComponent(ButAlterar)
-                    .addComponent(ButRemover)
-                    .addComponent(ButNovo))
-                .addGap(42, 42, 42))
-        );
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/adm2.jpg"))); // NOI18N
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButSalvarActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("click.wav");
 
         String nome = txtNome.getText();
         boolean validacao = true;
@@ -262,7 +254,7 @@ public class CrudUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_ButSalvarActionPerformed
 
     private void ButRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButRemoverActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("click.wav");
         
         if (this.indexSelecionado == -1)
             return;
@@ -282,7 +274,7 @@ public class CrudUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_ButRemoverActionPerformed
 
     private void ButAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButAlterarActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("click.wav");
         if (indexSelecionado == -1)
             return;
 
@@ -329,10 +321,12 @@ public class CrudUsuarios extends javax.swing.JFrame {
         indexSelecionado = JTableUsuarios.getSelectedRow();
     }//GEN-LAST:event_JTableUsuariosMouseClicked
 
-    private void ButSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButSairActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_ButSairActionPerformed
+    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
+        EfeitoSonoro.Play("back.wav");
+        TelaInicialAdm mq = new TelaInicialAdm();
+        mq.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_voltarBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,16 +389,20 @@ public class CrudUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton ButAlterar;
     private javax.swing.JButton ButNovo;
     private javax.swing.JButton ButRemover;
-    private javax.swing.JButton ButSair;
     private javax.swing.JButton ButSalvar;
     private javax.swing.JTable JTableUsuarios;
+    private javax.swing.JLabel background;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JLabel loginTitulo;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtSenha;
+    private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 }

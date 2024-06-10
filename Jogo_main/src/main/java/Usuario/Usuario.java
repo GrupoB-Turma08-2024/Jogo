@@ -30,6 +30,7 @@ public class Usuario {
         this.setSenha(senha);
         this.setSerie(serie);
     }
+    
 
     public int getSerie() {
         return Serie;
@@ -38,24 +39,15 @@ public class Usuario {
     public void setSerie(int Serie) {
         this.Serie = Serie;
     }
-    public Usuario(String nome, String email, String email2, String senha) throws Exception {
-        this.setNome(nome);
-        this.setEmail(email);
-        this.setEmail(email2);
-        this.setSenha(senha);
-    }
-    public Usuario(int idUsuario, String nome, String email, String email2, String senha) throws Exception {
+    
+    public Usuario(int idUsuario, String nome, String email, String senha) throws Exception {
         this.setIdUsuario(idUsuario);
         this.setNome(nome);
         this.setEmail(email);
-        this.setEmail(email2);
         this.setSenha(senha);
     }
    
-    public Usuario(int idUsuario, String nome, String email, String senha) throws Exception{
-        this(nome,email, senha);
-        this.setIdUsuario(idUsuario);
-    }
+    
     
     public int getIdUsuario() {
         return idUsuario;
