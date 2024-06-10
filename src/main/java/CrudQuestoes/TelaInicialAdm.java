@@ -96,7 +96,6 @@ public class TelaInicialAdm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoEditarQuestoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarQuestoesActionPerformed
-        // TODO add your handling code here:
 
         EfeitoSonoro.Play("click.wav");
         botaoEditarQuestoes.setCursor(new Cursor(Cursor.WAIT_CURSOR));
