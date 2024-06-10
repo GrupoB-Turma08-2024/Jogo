@@ -3,6 +3,7 @@ package CrudQuestoes;
 
 import CrudQuestoes.MenuQuestions;
 import Usuario.CrudUsuarios;
+import java.awt.Cursor;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 import telaInicial.TelaLogin;
@@ -96,6 +97,7 @@ public class TelaInicialAdm extends javax.swing.JFrame {
 
     private void botaoEditarQuestoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarQuestoesActionPerformed
         // TODO add your handling code here:
+        botaoEditarQuestoes.setCursor(new Cursor(Cursor.WAIT_CURSOR));
         EfeitoSonoro.Play("click.wav");
         MenuQuestions inserir = new MenuQuestions();
         inserir.setVisible(true);
@@ -103,12 +105,14 @@ public class TelaInicialAdm extends javax.swing.JFrame {
 
     private void botaoControlarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoControlarUsuariosActionPerformed
         // TODO add your handling code here:
+        botaoControlarUsuarios.setCursor(new Cursor(Cursor.WAIT_CURSOR));
         EfeitoSonoro.Play("click.wav");
         CrudUsuarios inserir = new CrudUsuarios();
         inserir.setVisible(true);
     }//GEN-LAST:event_botaoControlarUsuariosActionPerformed
 
     private void BotaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJogarActionPerformed
+        BotaoJogar.setCursor(new Cursor(Cursor.WAIT_CURSOR));
         EfeitoSonoro.Play("click.wav");
         TelaPrincipal inserir = new TelaPrincipal();
         inserir.setVisible(true);
@@ -117,20 +121,22 @@ public class TelaInicialAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoJogarActionPerformed
 
     private void saircontaBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saircontaBotaoActionPerformed
-                int i = JOptionPane.showConfirmDialog(
-        null, 
-        "Tem certeza?\nO Brolli sentirá sua falta... ☹ ",
-        "Adeus Fofete!",
-        JOptionPane.OK_CANCEL_OPTION
+        saircontaBotao.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+        
+        int i = JOptionPane.showConfirmDialog(
+            null, 
+            "Tem certeza?\nO Brolli sentirá sua falta... ☹ ",
+            "Adeus Fofete!",
+            JOptionPane.OK_CANCEL_OPTION
         );
         if(i == JOptionPane.OK_OPTION) {
-        System.out.println("Clicou em ok");
-        TelaLogin tl = new TelaLogin();
-        tl.setVisible(true);
-        this.dispose();
+            System.out.println("Clicou em ok");
+            TelaLogin tl = new TelaLogin();
+            tl.setVisible(true);
+            this.dispose();
         }
         else if (i == JOptionPane.CANCEL_OPTION) {
-        System.out.println("Clicou em cancelar");
+            System.out.println("Clicou em cancelar");
         }
     }//GEN-LAST:event_saircontaBotaoActionPerformed
 

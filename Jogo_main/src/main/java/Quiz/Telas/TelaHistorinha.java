@@ -1,6 +1,7 @@
 package Quiz.Telas;
 
 import Quiz.QuizManager;
+import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import java.util.ArrayList;
 import javax.swing.JButton;
@@ -27,6 +28,7 @@ public class TelaHistorinha extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         botaoProxima = new javax.swing.JButton();
         labelImagem = new javax.swing.JLabel();
 
@@ -55,7 +57,7 @@ public class TelaHistorinha extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botaoProxima);
-        botaoProxima.setBounds(770, 450, 210, 120);
+        botaoProxima.setBounds(760, 450, 210, 120);
 
         labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/inicial_0.jpg"))); // NOI18N
         labelImagem.setText("imagem");
@@ -70,6 +72,7 @@ public class TelaHistorinha extends javax.swing.JFrame {
             imagemAtiva++;
             labelImagem.setIcon(imagens.get(imagemAtiva));
         }else{
+            botaoProxima.setCursor(new Cursor(Cursor.WAIT_CURSOR));
             qm.avisarFimHistoria(nomeHistoria);
             dispose();
         }
@@ -86,9 +89,14 @@ public class TelaHistorinha extends javax.swing.JFrame {
     private void ajustarBot(JButton bot, int sizeToAdd){
         bot.setSize(210+ sizeToAdd, 120 + sizeToAdd);
     }
+    
+    public void mudarPosicaoSeta(int x, int y){
+        botaoProxima.setLocation(x, y);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoProxima;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel labelImagem;
     // End of variables declaration//GEN-END:variables
 }

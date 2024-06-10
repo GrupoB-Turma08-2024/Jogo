@@ -36,7 +36,8 @@ public class QuizManager {
         }
         else{
             Pontuacao.setTempoFim(System.currentTimeMillis());
-            TelaHistorinha th = new TelaHistorinha(new String[]{"src/main/resources/imagens_telas/final_0.jpg","src/main/resources/imagens_telas/final_1.jpg","src/main/resources/imagens_telas/final_2.jpg"}, "final", this);
+            TelaHistorinha th = new TelaHistorinha(new String[]{"src/main/resources/imagens_telas/final_0.jpg","src/main/resources/imagens_telas/final_1.jpg","src/main/resources/imagens_telas/final_2.jpg","src/main/resources/imagens_telas/final_3.jpg","src/main/resources/imagens_telas/final_4.jpg","src/main/resources/imagens_telas/final_5.jpg"}, "final", this);
+            th.mudarPosicaoSeta(40, 450);
             telaQuiz.setVisible(false);
             th.setVisible(true);
         }

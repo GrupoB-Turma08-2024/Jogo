@@ -29,6 +29,9 @@ public class CrudUsuarios extends javax.swing.JFrame {
         initComponents();
         JTableUsuarios.setModel(tabelaUsuario);
         getUsuarios();
+        txtEmail.setOpaque(false);
+        txtNome.setOpaque(false);
+        txtSenha.setOpaque(false);
         setLocationRelativeTo(null);
     }
 
@@ -167,6 +170,7 @@ public class CrudUsuarios extends javax.swing.JFrame {
         getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 181, 420, 20));
 
         txtSenha.setBackground(new java.awt.Color(0,0,0,1));
+        txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setBorder(null);
         getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 420, 20));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 10));

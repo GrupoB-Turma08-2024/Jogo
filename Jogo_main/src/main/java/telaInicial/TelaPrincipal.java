@@ -5,9 +5,12 @@ import Quiz.QuizManager;
 import java.awt.Cursor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 
 public class TelaPrincipal extends javax.swing.JFrame {
+    
     private static QuizManager quizManager;
+    
     public TelaPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
@@ -29,6 +32,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoJogar.setBorder(null);
         botaoJogar.setContentAreaFilled(false);
         botaoJogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoJogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoJogarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoJogarMouseExited(evt);
+            }
+        });
         botaoJogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoJogarActionPerformed(evt);
@@ -39,6 +50,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoRanking.setBorder(null);
         botaoRanking.setContentAreaFilled(false);
         botaoRanking.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoRanking.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoRankingMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoRankingMouseExited(evt);
+            }
+        });
         botaoRanking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoRankingActionPerformed(evt);
@@ -49,6 +68,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoMenu.setBorder(null);
         botaoMenu.setContentAreaFilled(false);
         botaoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoMenuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoMenuMouseExited(evt);
+            }
+        });
         botaoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoMenuActionPerformed(evt);
@@ -89,6 +116,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botaoRankingActionPerformed
+
+    private void botaoJogarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoJogarMouseEntered
+
+    }//GEN-LAST:event_botaoJogarMouseEntered
+
+    private void botaoJogarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoJogarMouseExited
+
+    }//GEN-LAST:event_botaoJogarMouseExited
+
+    private void botaoRankingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRankingMouseEntered
+
+    }//GEN-LAST:event_botaoRankingMouseEntered
+
+    private void botaoRankingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoRankingMouseExited
+
+    }//GEN-LAST:event_botaoRankingMouseExited
+
+    private void botaoMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoMenuMouseEntered
+
+    }//GEN-LAST:event_botaoMenuMouseEntered
+
+    private void botaoMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoMenuMouseExited
+
+    }//GEN-LAST:event_botaoMenuMouseExited
 
     /**
      * @param args the command line arguments

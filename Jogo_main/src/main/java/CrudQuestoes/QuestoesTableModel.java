@@ -15,7 +15,7 @@ import javax.swing.table.AbstractTableModel;
 public class QuestoesTableModel extends AbstractTableModel {
 
     private List<Questoes> dados = new ArrayList<>();
-    private String[]colunas = {"idQuestoes","fase","dificuldade","pergunta","respostaCorreta",};
+    private String[]colunas = {"ID","Fase","Dificuldade","Pergunta","Resposta",};
     
     @Override
     public String getColumnName(int column){
