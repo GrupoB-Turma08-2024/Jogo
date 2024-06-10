@@ -30,6 +30,12 @@ public final class Pontuacao {
         }
     }
     
+    public static void removerPontos(boolean faseBonus){
+        if(!faseBonus && pontos >= 15){
+            pontos -= 15;
+        }
+    }
+    
     public static boolean estaCadastrado(){
         return cadastrado;
     }

@@ -63,6 +63,7 @@ public class QuizManager {
             telaQuiz.setVisible(false);
         }
         else{
+            Pontuacao.removerPontos(faseAtual.isBonus());
             var telaErro = new TelaErro(this, faseAtual, faseAtual.getQuestao(numeroPergunta).getCorrecao());
             telaQuiz.setVisible(false);         
         }

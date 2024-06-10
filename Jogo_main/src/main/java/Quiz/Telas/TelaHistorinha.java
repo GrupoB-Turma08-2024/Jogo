@@ -72,7 +72,7 @@ public class TelaHistorinha extends javax.swing.JFrame {
             imagemAtiva++;
             labelImagem.setIcon(imagens.get(imagemAtiva));
         }else{
-            botaoProxima.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+            this.setCursor(new Cursor(Cursor.WAIT_CURSOR));
             qm.avisarFimHistoria(nomeHistoria);
             dispose();
         }
