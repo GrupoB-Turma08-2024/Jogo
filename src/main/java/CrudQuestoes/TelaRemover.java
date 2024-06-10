@@ -23,6 +23,8 @@ public class TelaRemover extends javax.swing.JFrame {
         initComponents();
         getId();
         setLocationRelativeTo(null);
+        txtDificuldade.setOpaque(false);
+        txtFase.setOpaque(false);
         txtA.setOpaque(false);
         txtB.setOpaque(false);
         txtC.setOpaque(false);
