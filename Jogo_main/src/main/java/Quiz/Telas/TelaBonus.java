@@ -33,9 +33,7 @@ public class TelaBonus extends javax.swing.JFrame{
         botaoNao.setBorder(null);
         botaoNao.setBorderPainted(false);
         botaoNao.setContentAreaFilled(false);
-        botaoNao.setMaximumSize(new java.awt.Dimension(220, 120));
-        botaoNao.setMinimumSize(new java.awt.Dimension(220, 120));
-        botaoNao.setPreferredSize(new java.awt.Dimension(220, 120));
+        botaoNao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoNao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botaoNaoMouseEntered(evt);
@@ -56,9 +54,7 @@ public class TelaBonus extends javax.swing.JFrame{
         botaoSim.setBorder(null);
         botaoSim.setBorderPainted(false);
         botaoSim.setContentAreaFilled(false);
-        botaoSim.setMaximumSize(new java.awt.Dimension(220, 120));
-        botaoSim.setMinimumSize(new java.awt.Dimension(220, 120));
-        botaoSim.setPreferredSize(new java.awt.Dimension(220, 120));
+        botaoSim.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoSim.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botaoSimMouseEntered(evt);
@@ -109,7 +105,7 @@ public class TelaBonus extends javax.swing.JFrame{
     }//GEN-LAST:event_botaoSimMouseExited
     
     private void ajustarBot(JButton bot, int sizeToAdd){
-                bot.setSize(botSize[0]+ sizeToAdd, botSize[1] + sizeToAdd);
+        bot.setSize(botSize[0]+ sizeToAdd, botSize[1] + sizeToAdd);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

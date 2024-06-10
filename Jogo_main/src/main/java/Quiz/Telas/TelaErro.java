@@ -3,14 +3,19 @@ package Quiz.Telas;
 import Quiz.Fase;
 import Quiz.QuizManager;
 import java.awt.Color;
+import javax.swing.JButton;
 
 public class TelaErro extends javax.swing.JFrame {
 
     QuizManager quizManager;
+    private final static int[] botSize = {190,40};
     
     public TelaErro(QuizManager qM,Fase fase, String explicacao) {
         initComponents();
         quizManager = qM;
+        if(quizManager.getFaseAtual().isBonus()){
+            botaoTentarNovamente.setText("PRÓXIMA PERGUNTA");
+        }
         setLocationRelativeTo(null);
         backgroundLabel.setIcon(fase.getImagemErro());
         labelExplicacao.setOpaque(true);
@@ -23,6 +28,10 @@ public class TelaErro extends javax.swing.JFrame {
         int caracteres = texto.length();
         String novoTexto = String.format("<html><p style=\"width:%dpx; text-align: center \"> VOCÊ ERROU! EXPLICAÇÃO: " + texto + "</html>", tamanhoMaximo);
         return novoTexto;
+    }
+    
+    private void ajustarBot(JButton bot, int sizeToAdd){
+        bot.setSize(botSize[0]+ sizeToAdd, botSize[1] + sizeToAdd);
     }
 
     @SuppressWarnings("unchecked")
@@ -53,9 +62,18 @@ public class TelaErro extends javax.swing.JFrame {
         botaoTentarNovamente.setText("TENTAR NOVAMENTE");
         botaoTentarNovamente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         botaoTentarNovamente.setContentAreaFilled(false);
+        botaoTentarNovamente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoTentarNovamente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoTentarNovamente.setIconTextGap(0);
         botaoTentarNovamente.setRolloverEnabled(false);
+        botaoTentarNovamente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoTentarNovamenteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoTentarNovamenteMouseExited(evt);
+            }
+        });
         botaoTentarNovamente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoTentarNovamenteActionPerformed(evt);
@@ -76,9 +94,20 @@ public class TelaErro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoTentarNovamenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTentarNovamenteActionPerformed
+        if(quizManager.getFaseAtual().isBonus()){
+         quizManager.proximaFase();
+        }
         quizManager.getTelaQuiz().setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoTentarNovamenteActionPerformed
+
+    private void botaoTentarNovamenteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoTentarNovamenteMouseEntered
+        ajustarBot(botaoTentarNovamente, 5);
+    }//GEN-LAST:event_botaoTentarNovamenteMouseEntered
+
+    private void botaoTentarNovamenteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoTentarNovamenteMouseExited
+        ajustarBot(botaoTentarNovamente, 0);
+    }//GEN-LAST:event_botaoTentarNovamenteMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLabel;

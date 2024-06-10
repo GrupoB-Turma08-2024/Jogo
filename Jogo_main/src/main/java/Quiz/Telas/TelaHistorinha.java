@@ -3,6 +3,7 @@ package Quiz.Telas;
 import Quiz.QuizManager;
 import javax.swing.ImageIcon;
 import java.util.ArrayList;
+import javax.swing.JButton;
 
 public class TelaHistorinha extends javax.swing.JFrame {
     
@@ -35,14 +36,26 @@ public class TelaHistorinha extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         botaoProxima.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        botaoProxima.setText("FAZER UM BOTAO EM FORMA DE SETINHA PFV OBG ===>");
+        botaoProxima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_botoes/botao_setinha.png"))); // NOI18N
+        botaoProxima.setBorder(null);
+        botaoProxima.setBorderPainted(false);
+        botaoProxima.setContentAreaFilled(false);
+        botaoProxima.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoProxima.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botaoProximaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botaoProximaMouseExited(evt);
+            }
+        });
         botaoProxima.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoProximaActionPerformed(evt);
             }
         });
         getContentPane().add(botaoProxima);
-        botaoProxima.setBounds(20, 500, 370, 40);
+        botaoProxima.setBounds(770, 450, 210, 120);
 
         labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/inicial_0.jpg"))); // NOI18N
         labelImagem.setText("imagem");
@@ -62,6 +75,17 @@ public class TelaHistorinha extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoProximaActionPerformed
 
+    private void botaoProximaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoProximaMouseEntered
+        ajustarBot(botaoProxima, 5);
+    }//GEN-LAST:event_botaoProximaMouseEntered
+
+    private void botaoProximaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoProximaMouseExited
+        ajustarBot(botaoProxima, 0);
+    }//GEN-LAST:event_botaoProximaMouseExited
+
+    private void ajustarBot(JButton bot, int sizeToAdd){
+        bot.setSize(210+ sizeToAdd, 120 + sizeToAdd);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoProxima;

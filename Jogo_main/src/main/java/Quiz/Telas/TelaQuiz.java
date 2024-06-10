@@ -30,7 +30,6 @@ public class TelaQuiz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         labelPergunta = new javax.swing.JLabel();
         botaoAlternativaA = new javax.swing.JButton();
         botaoAlternativaB = new javax.swing.JButton();
@@ -46,28 +45,14 @@ public class TelaQuiz extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1000, 562));
         getContentPane().setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Goudy Stout", 3, 10)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 51, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/TelaLogin1.jpg"))); // NOI18N
-        jButton1.setText("BOTÃO SUPER SECRETO DO PORTO");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 15, true));
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(530, 160, 380, 50);
-
         labelPergunta.setBackground(new java.awt.Color(255, 255, 255));
-        labelPergunta.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        labelPergunta.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         labelPergunta.setForeground(new java.awt.Color(255, 255, 255));
         labelPergunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPergunta.setText("PERGUNTA");
         labelPergunta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(labelPergunta);
-        labelPergunta.setBounds(0, 0, 1000, 160);
+        labelPergunta.setBounds(0, 0, 1000, 210);
 
         botaoAlternativaA.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         botaoAlternativaA.setForeground(new java.awt.Color(255, 255, 255));
@@ -76,6 +61,7 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaA.setBorder(null);
         botaoAlternativaA.setBorderPainted(false);
         botaoAlternativaA.setContentAreaFilled(false);
+        botaoAlternativaA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoAlternativaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoAlternativaA.setIconTextGap(0);
         botaoAlternativaA.setMaximumSize(new java.awt.Dimension(230, 120));
@@ -104,6 +90,7 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaB.setBorder(null);
         botaoAlternativaB.setBorderPainted(false);
         botaoAlternativaB.setContentAreaFilled(false);
+        botaoAlternativaB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoAlternativaB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoAlternativaB.setIconTextGap(0);
         botaoAlternativaB.setMaximumSize(new java.awt.Dimension(230, 120));
@@ -135,6 +122,7 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaC.setBorder(null);
         botaoAlternativaC.setBorderPainted(false);
         botaoAlternativaC.setContentAreaFilled(false);
+        botaoAlternativaC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoAlternativaC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoAlternativaC.setIconTextGap(0);
         botaoAlternativaC.setMaximumSize(new java.awt.Dimension(230, 120));
@@ -163,6 +151,7 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaD.setBorder(null);
         botaoAlternativaD.setBorderPainted(false);
         botaoAlternativaD.setContentAreaFilled(false);
+        botaoAlternativaD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoAlternativaD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoAlternativaD.setIconTextGap(0);
         botaoAlternativaD.setMaximumSize(new java.awt.Dimension(230, 120));
@@ -191,6 +180,7 @@ public class TelaQuiz extends javax.swing.JFrame {
         botaoAlternativaE.setBorder(null);
         botaoAlternativaE.setBorderPainted(false);
         botaoAlternativaE.setContentAreaFilled(false);
+        botaoAlternativaE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoAlternativaE.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botaoAlternativaE.setIconTextGap(0);
         botaoAlternativaE.setMaximumSize(new java.awt.Dimension(230, 120));
@@ -244,10 +234,6 @@ public class TelaQuiz extends javax.swing.JFrame {
         quizManager.responder('E');
     }//GEN-LAST:event_botaoAlternativaEActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        quizManager.proximaPergunta();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void botaoAlternativaAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoAlternativaAMouseEntered
         ajustarBot(botaoAlternativaA, 5);
     }//GEN-LAST:event_botaoAlternativaAMouseEntered
@@ -293,7 +279,7 @@ public class TelaQuiz extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoAlternativaEMouseExited
     
     private void ajustarBot(JButton bot, int sizeToAdd){
-                bot.setSize(botSize[0]+ sizeToAdd, botSize[1] + sizeToAdd);
+        bot.setSize(botSize[0]+ sizeToAdd, botSize[1] + sizeToAdd);
     }
     
     public void atualizarTela(Fase fase, int numeroPergunta) {
@@ -330,7 +316,6 @@ public class TelaQuiz extends javax.swing.JFrame {
     private javax.swing.JButton botaoAlternativaC;
     private javax.swing.JButton botaoAlternativaD;
     private javax.swing.JButton botaoAlternativaE;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labelPergunta;
     // End of variables declaration//GEN-END:variables
 
