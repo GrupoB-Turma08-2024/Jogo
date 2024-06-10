@@ -19,7 +19,7 @@ public class TelaLousa extends javax.swing.JFrame {
     
     private String quebrarTexto(String texto, int tamanhoMaximo){
         int caracteres = texto.length();
-        String novoTexto = String.format("<html><p style=\"width:%dpx; text-align: left \"> EXPLICAÇÃO: " + texto + "</html>", tamanhoMaximo);
+        String novoTexto = String.format("<html><p style=\"width:%dpx; text-align: left \">  " + texto + "</html>", tamanhoMaximo);
         return novoTexto;
     }
 
@@ -76,7 +76,7 @@ public class TelaLousa extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ACERTOU!");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 50, 170, 40);
+        jLabel1.setBounds(70, 50, 170, 40);
 
         backgroundLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/imagem_explicacao.jpg"))); // NOI18N

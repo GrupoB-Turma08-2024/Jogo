@@ -20,8 +20,14 @@ public class TelaAlterar extends javax.swing.JFrame {
         initComponents();
         getId();
         setLocationRelativeTo(null);
-   
-       
+        txtPergunta.setOpaque(false);
+        txtA.setOpaque(false);
+        txtB.setOpaque(false);
+        txtC.setOpaque(false);
+        txtD.setOpaque(false);
+        txtCorreta.setOpaque(false);
+        txtExplicacao.setOpaque(false);
+        
     }
     private void getId() {
         Connection connection = null;
@@ -175,7 +181,7 @@ public class TelaAlterar extends javax.swing.JFrame {
         tituloFase.setFont(new java.awt.Font("Segoe UI", 3, 15)); // NOI18N
         tituloFase.setForeground(new java.awt.Color(255, 255, 255));
         tituloFase.setText("Fase:");
-        getContentPane().add(tituloFase, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 37, -1));
+        getContentPane().add(tituloFase, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 37, -1));
 
         tituloDificuldade.setFont(new java.awt.Font("Segoe UI", 3, 15)); // NOI18N
         tituloDificuldade.setForeground(new java.awt.Color(255, 255, 255));
@@ -244,6 +250,11 @@ public class TelaAlterar extends javax.swing.JFrame {
         txtCorreta.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtCorreta.setForeground(new java.awt.Color(255, 255, 255));
         txtCorreta.setBorder(null);
+        txtCorreta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorretaActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtCorreta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 780, 20));
 
         loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 36)); // NOI18N
@@ -309,6 +320,11 @@ public class TelaAlterar extends javax.swing.JFrame {
         txtExplicacao.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtExplicacao.setForeground(new java.awt.Color(255, 255, 255));
         txtExplicacao.setBorder(null);
+        txtExplicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtExplicacaoActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtExplicacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 730, -1));
 
         txtD.setBackground(new java.awt.Color(0,0,0,1));
@@ -329,8 +345,14 @@ public class TelaAlterar extends javax.swing.JFrame {
         txtC.setForeground(new java.awt.Color(255, 255, 255));
         txtC.setBorder(null);
         getContentPane().add(txtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 780, 20));
-        getContentPane().add(txtFase, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 100, -1));
-        getContentPane().add(txtDificuldade, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 80, -1));
+
+        txtFase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFaseActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtFase, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 100, -1));
+        getContentPane().add(txtDificuldade, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 80, -1));
 
         txtA.setBackground(new java.awt.Color(0,0,0,1));
         txtA.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -451,6 +473,18 @@ public class TelaAlterar extends javax.swing.JFrame {
                     getDados(selectedId);
                 }
     }//GEN-LAST:event_BotProcurarActionPerformed
+
+    private void txtCorretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorretaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorretaActionPerformed
+
+    private void txtExplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtExplicacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtExplicacaoActionPerformed
+
+    private void txtFaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFaseActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

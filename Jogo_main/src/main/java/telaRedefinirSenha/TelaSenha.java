@@ -5,6 +5,7 @@ import Connection.DAO;
 import static telaRedefinirSenha.Email.generateCode;
 import Usuario.Usuario;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -77,7 +78,7 @@ public class TelaSenha extends javax.swing.JFrame {
         loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 52)); // NOI18N
         loginTitulo.setForeground(new java.awt.Color(255, 255, 255));
         loginTitulo.setText("REDEFINIR SENHA");
-        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, -1, -1));
+        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
 
         esqueceuSenhaText.setBackground(new java.awt.Color(0,0,0,1));
         esqueceuSenhaText.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -99,7 +100,7 @@ public class TelaSenha extends javax.swing.JFrame {
                 esqueceuSenhaTextActionPerformed(evt);
             }
         });
-        getContentPane().add(esqueceuSenhaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 190, 30));
+        getContentPane().add(esqueceuSenhaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 190, 20));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
@@ -136,6 +137,7 @@ public class TelaSenha extends javax.swing.JFrame {
         String email = esqueceuSenhaText.getText();
         String code = generateCode();
         try {
+            entrarBotao.setCursor(new Cursor(Cursor.WAIT_CURSOR));
             sendEmail(email, code);
             salvarCodigo(email,code);
             System.out.println("Email enviado com sucesso!");

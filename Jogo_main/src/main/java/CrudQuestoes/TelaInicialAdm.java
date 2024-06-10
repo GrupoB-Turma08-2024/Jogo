@@ -54,7 +54,7 @@ public class TelaInicialAdm extends javax.swing.JFrame {
         botaoControlarUsuarios.setBackground(new java.awt.Color(51, 0, 0));
         botaoControlarUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         botaoControlarUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        botaoControlarUsuarios.setText("Controlar Usuarios");
+        botaoControlarUsuarios.setText("Controlar Usuários");
         botaoControlarUsuarios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         botaoControlarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoControlarUsuarios.addActionListener(new java.awt.event.ActionListener() {

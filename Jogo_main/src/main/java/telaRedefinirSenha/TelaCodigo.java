@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import telaInicial.EfeitoSonoro;
 /**
  *
  * @author felip
@@ -55,6 +56,7 @@ public class TelaCodigo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        voltarBotao = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         loginTitulo = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -67,6 +69,20 @@ public class TelaCodigo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        voltarBotao.setBackground(new java.awt.Color(0, 0, 0));
+        voltarBotao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        voltarBotao.setForeground(new java.awt.Color(255, 255, 255));
+        voltarBotao.setText("< Voltar");
+        voltarBotao.setBorder(null);
+        voltarBotao.setContentAreaFilled(false);
+        voltarBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        voltarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarBotaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltarBotao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 50));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,7 +132,7 @@ public class TelaCodigo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void avancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avancarActionPerformed
-        // TODO add your handling code here:
+        EfeitoSonoro.Play("click.wav");        
         String codigo = jTextField1.getText();
         codigoTemporario = jTextField1.getText();
         try {
@@ -135,6 +151,13 @@ public class TelaCodigo extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_avancarActionPerformed
+
+    private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
+        EfeitoSonoro.Play("back.wav");
+        TelaSenha ts = new TelaSenha();
+        ts.setVisible (true);
+        dispose();
+    }//GEN-LAST:event_voltarBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,5 +205,6 @@ public class TelaCodigo extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel loginTitulo;
+    private javax.swing.JButton voltarBotao;
     // End of variables declaration//GEN-END:variables
 }

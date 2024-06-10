@@ -107,6 +107,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoMenuActionPerformed
 
     private void botaoRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRankingActionPerformed
+        EfeitoSonoro.Play("click.wav");
         try {
             botaoRanking.setCursor(new Cursor(Cursor.WAIT_CURSOR));
             TelaRanking ra = new TelaRanking();

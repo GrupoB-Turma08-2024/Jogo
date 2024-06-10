@@ -43,6 +43,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         semCadastroBotao.setForeground(new java.awt.Color(255, 255, 255));
         semCadastroBotao.setText("Jogar sem cadastro  >");
+        semCadastroBotao.setBorder(null);
         semCadastroBotao.setContentAreaFilled(false);
         semCadastroBotao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         semCadastroBotao.addActionListener(new java.awt.event.ActionListener() {

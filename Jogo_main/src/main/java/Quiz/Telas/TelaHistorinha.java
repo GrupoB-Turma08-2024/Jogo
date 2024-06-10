@@ -57,12 +57,12 @@ public class TelaHistorinha extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botaoProxima);
-        botaoProxima.setBounds(760, 450, 210, 120);
+        botaoProxima.setBounds(760, 440, 210, 120);
 
         labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/inicial_0.jpg"))); // NOI18N
         labelImagem.setText("imagem");
         getContentPane().add(labelImagem);
-        labelImagem.setBounds(0, 10, 1000, 563);
+        labelImagem.setBounds(0, -17, 1000, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

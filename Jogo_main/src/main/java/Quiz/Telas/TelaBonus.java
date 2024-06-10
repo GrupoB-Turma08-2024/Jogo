@@ -73,7 +73,7 @@ public class TelaBonus extends javax.swing.JFrame{
 
         backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/tela_bonus_1.jpeg"))); // NOI18N
         getContentPane().add(backgroundLabel);
-        backgroundLabel.setBounds(0, -10, 1000, 593);
+        backgroundLabel.setBounds(0, -10, 1000, 580);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
