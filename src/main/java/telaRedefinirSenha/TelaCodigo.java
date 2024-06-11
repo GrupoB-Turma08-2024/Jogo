@@ -154,7 +154,6 @@ public class TelaCodigo extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(TelaCodigo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_avancarActionPerformed
 
     private void voltarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBotaoActionPerformed
